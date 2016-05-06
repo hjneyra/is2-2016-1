@@ -4,11 +4,11 @@ import {Component, Inject} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
 import {Response} from 'angular2/http';
 import {RouterLink} from 'angular2/router';
-import {HelloService} from './hello.service';
+import {HelloService} from '../service/hello.service';
 
 @Component({
     selector: 'test',
-    templateUrl: 'app/hello/hello.component.html',
+    templateUrl: 'app/html/hello.component.html',
     providers: [HelloService],
     directives: [CORE_DIRECTIVES, RouterLink]
 })

@@ -12,14 +12,12 @@ public class Usuario {
 	@Id
 	@SequenceGenerator(name="USUARIO_ID_GENERATOR", sequenceName="USUARIO_ID_SEQ")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="USUARIO_ID_GENERATOR")
-	private Long id;
-
-	private String name;
-
+    private Long id;
+    private String name;
     private String last_name;
-
     private String email;
-	public Long getId() {
+
+    public Long getId() {
 		return id;
 	}
 

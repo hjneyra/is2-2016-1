@@ -24,14 +24,10 @@ public class LoginService {
 			usuario = new Usuario();
 			usuario.setEmail(email);
 			usuario.setPassword(password);
-			userRepository.persist(usuario);
+			userRepository.save(usuario);
 			return null;
 		}	
 		return usuario;
 	}
-	/*
-	public String test() {
-        return "Hello, World!";
-    }*/
 
 }

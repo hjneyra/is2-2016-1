@@ -19,12 +19,12 @@ public class LoginService {
 
 	@Transactional
 	public Usuario login(String email, String password){
-		Usuario usuario = userRepository.findByEmail(email,password);
+		Usuario usuario = userRepository.findByEmailAndPassword( email,  password);
 		if (usuario == null){
-			usuario = new Usuario();
-			usuario.setEmail(email);
-			usuario.setPassword(password);
-			userRepository.save(usuario);
+			// usuario = new Usuario();
+			// usuario.setEmail(email);
+			// usuario.setPassword(password);
+			// userRepository.save(usuario);
 			return null;
 		}	
 		return usuario;

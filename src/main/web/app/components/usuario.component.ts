@@ -16,14 +16,14 @@ export class UsuarioComponent {
 
     private jsonResponse: string;
     private message: string;
+    private usuarios: Array<any>;
 
     constructor(@Inject(UsuarioService) private usuarioService: UsuarioService) {}
 
     ngOnInit() {
-        this.usuarioService.getTest().subscribe(
+        this.usuarioService.getUsuarios().subscribe(
             data => {this.jsonResponse = JSON.stringify(data),
-                     this.message = data.test.message},
-            () => console.log('../test/get/json returned: \n' + this.jsonResponse)
+                     this.message = data[0].email, this.usuarios = data}
         );
     }
 }

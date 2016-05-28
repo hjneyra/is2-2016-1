@@ -12,8 +12,8 @@ export class UsuarioService {
 
     constructor(@Inject(Http) private http: Http) {}
 
-    getTest() {
-        return this.http.get('/test/get/json')
+    getUsuarios() {
+        return this.http.get('/usuarios')
             .map((res:Response) => res.json());
     }
 }

@@ -24,18 +24,10 @@ export class LoginComponent {
     private password: string;
     constructor( @Inject(LoginService) private loginService: LoginService) {}
     data:Object = {};
-    fromSubmit(){
+    fromSubmit() {
         console.log(this.data);
-        if (this.data.email == "prueba@test.com" && this.data.password== "123456"){
-            console.log("Hello");
-            this.loginService.login(this.data.email, this.data.password).subscribe(
-                data => {},
-                () => {})
-            );
-        }
-        else{
-            console.log("Who are you?");
-        }
-    }
-
+        this.loginService.login(this.data.email, this.data.password).subscribe(
+            data => { },
+            () => { })
+    };
 }

@@ -29,17 +29,10 @@ public class LoginController {
 	@ResponseBody
 	public HttpEntity<Usuario> login(@RequestBody Log log) {
 		Usuario usuario = loginService.login(log.email, log.password);
-		System.out.println("Usuario: " + (usuario == null ? null : usuario.getEmail()));
-		return new HttpEntity<Usuario>(usuario);
-	}
-
-	@RequestMapping(value = "login/{id}")
-	@ResponseBody
-	public HttpEntity<Usuario> listAll(@PathVariable String email, String password) {
-		Usuario usuario = usuarioRepository.findByEmailAndPassword(email, password);
-		if (usuario == null) {
+		if(usuario==null){
 			return (HttpEntity<Usuario>) HttpEntity.EMPTY;
 		}
+//		System.out.println("Usuario: " + (usuario == null ? null : usuario.getEmail()));
 		return new HttpEntity<Usuario>(usuario);
 	}
 }

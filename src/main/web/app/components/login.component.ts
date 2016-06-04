@@ -28,7 +28,10 @@ export class LoginComponent {
         console.log(this.data);
         if (this.data.email == "prueba@test.com" && this.data.password== "123456"){
             console.log("Hello");
-            this.loginService.login(this.data.username, this.data.password);
+            this.loginService.login(this.data.email, this.data.password).subscribe(
+                data => {},
+                () => {})
+            );
         }
         else{
             console.log("Who are you?");

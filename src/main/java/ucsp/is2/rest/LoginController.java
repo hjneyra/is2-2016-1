@@ -23,11 +23,11 @@ public class LoginController {
 	private LoginService loginService;
 	UsuarioRepository usuarioRepository;
 
-	// @RequestMapping(value="/login", method=RequestMethod.POST)
-	// public Usuario (String email,String password)
-	// {
-	// 	return loginService.login(email,password);
-	// }
+	 @RequestMapping(value="/login", method=RequestMethod.POST)
+	 public Usuario login(String email,String password)
+	 {
+	 	return loginService.login(email,password);
+	}
 
 	@RequestMapping(value = "login/{id}")
 	public HttpEntity<Usuario> listAll(@PathVariable String email, String password) {

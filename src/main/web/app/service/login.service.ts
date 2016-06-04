@@ -12,8 +12,8 @@ export class LoginService {
 
     constructor(@Inject(Http) private http: Http) {}
 
-    getTest() {
-        return this.http.get('/test/get/json')
+    login(username: string, password: string) {
+        return this.http.post('/login', '{"username": "' + username + '", "password": "' + password + '"}');
             .map((res:Response) => res.json());
     }
 }

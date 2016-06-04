@@ -7,7 +7,7 @@ import {LoginComponent} from './components/login.component';
 import {HelloComponent} from './components/hello.component';
 import {UsuarioComponent} from './components/usuario.component';
 import {HomeComponent} from './home/home.component';
-
+import {AdminComponent} from './components/admin.component';
 @Component({
     selector: 'music-online',
     template: '<router-outlet></router-outlet>',

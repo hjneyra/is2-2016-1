@@ -12,8 +12,8 @@ export class LoginService {
 
     constructor(@Inject(Http) private http: Http) {}
 
-    login(username: string, password: string) {
-        return this.http.post('/login', '{"username": "' + username + '", "password": "' + password + '"}');
+    login(email: string, password: string) {
+        return this.http.post('/login', '{"email": "' + email + '", "password": "' + password + '"}');
             .map((res:Response) => res.json());
     }
 }

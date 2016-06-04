@@ -26,9 +26,9 @@ export class LoginComponent {
     data:Object = {};
     fromSubmit(){
         console.log(this.data);
-        if (this.data.username == "prueba@test.com" && this.data.password== "123456"){
+        if (this.data.email == "prueba@test.com" && this.data.password== "123456"){
             console.log("Hello");
-            //this.loginService.login(this.data.username, this.data.password);
+            this.loginService.login(this.data.username, this.data.password);
         }
         else{
             console.log("Who are you?");

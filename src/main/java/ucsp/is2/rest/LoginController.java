@@ -15,6 +15,12 @@ import ucsp.is2.model.Usuario;
 import ucsp.is2.repository.UsuarioRepository;
 import java.util.Map;
 import java.util.HashMap;
+import org.springframework.web.bind.annotation.RequestBody;
+
+class Log{
+	public String email;
+	public String password;
+};
 
 @RestController
 public class LoginController {
@@ -24,9 +30,9 @@ public class LoginController {
 	UsuarioRepository usuarioRepository;
 
 	 @RequestMapping(value="/login", method=RequestMethod.POST)
-	 public Usuario login(String email,String password)
+	 public Usuario login(@RequestBody Log log)
 	 {
-	 	return loginService.login(email,password);
+	 	return loginService.login(log.email,log.password);
 	}
 
 	@RequestMapping(value = "login/{id}")

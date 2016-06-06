@@ -15,6 +15,7 @@ public class Usuario {
     private Long id;
     private String name;
     private String last_name;
+    private String password;
     private String email;
 
     public Long getId() {
@@ -45,5 +46,13 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

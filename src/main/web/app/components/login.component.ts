@@ -20,14 +20,17 @@ import {LoginService} from '../service/login.service';
 
 
 export class LoginComponent {
-    private username: string;
+    private email: string;
     private password: string;
-    constructor( @Inject(LoginService) private loginService: LoginService) {}
+    constructor( 
+        @Inject(LoginService) private loginService: LoginService,
+        private router: Router) { }
+
     data:Object = {};
     fromSubmit() {
         console.log(this.data);
-        this.loginService.login(this.data.email, this.data.password).subscribe(
-            data => { },
-            () => { })
-    };
+        this.loginService.login(this.data.email, this.data.password).subscribe((result) => {
+            this.router.navigate(['Usuario']);
+        });
+    }
 }

@@ -21,10 +21,6 @@ public class LoginService {
 	public Usuario login(String email, String password){
 		Usuario usuario = userRepository.findByEmailAndPassword(email, password);
 		if (usuario == null){
-			// usuario = new Usuario();
-			// usuario.setEmail(email);
-			// usuario.setPassword(password);
-			// userRepository.save(usuario);
 			return null;
 		}
 		System.out.println(usuario.getEmail());	

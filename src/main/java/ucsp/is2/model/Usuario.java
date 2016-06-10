@@ -2,6 +2,8 @@ package ucsp.is2.model;
 
 import java.util.Collection;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.JoinTable;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;

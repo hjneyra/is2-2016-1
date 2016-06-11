@@ -7,28 +7,32 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 @Entity
 public class Puntuation{
-    @ID
+
+    @Id
     @SequenceGenerator(name="PUNTIATION_GENERATOR", sequenceName="PUNTUATION_SEQ")
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PUNTUATION_GENERATOR")
+    private long id;
 
+    private long score = 0;
 
-    private integer score = 0;
-    public Puntuacion(){
-    
-	}
-	public long getScore() {
-		return score;
-	}
+    public Puntuation(){
 
-	public void setScore(long score) {
-		this.score = score;
-	}
-    
-    public static integer clasification(){
-        
-            score = score + 1;
-            Puntuation.save(score);
-            System.out.println(score);
+	  }
+
+  	public long getScore() {
+  		return score;
+  	}
+
+  	public void setScore(long score) {
+  		this.score = score;
+  	}
+
+    public static int clasification(){
+      // You can't save objects on the model :'(
+      //score = score + 1;
+      //Puntuation.save(score);
+      //System.out.println(score);
+      return 0;
     }
- 
+
 }

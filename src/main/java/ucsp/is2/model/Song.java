@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import java.util.Calendar;
 
 @Entity
 public class Song {
@@ -12,28 +13,27 @@ public class Song {
 	@Id
 	@SequenceGenerator(name="SONG_ID_GENERATOR", sequenceName="SONG_ID_SEQ")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SONG_ID_GENERATOR")
-	private Long id;
-	
-	public long int Play_Counter=0;
+	private long id;
+
+	public long Play_Counter=0;
 	private int Month;
-	
+
 	public void Increase_Counter(){
 		Play_Counter++;
 	}
-	
+
 	private void Update_Month(){
-		Calendar Today = Calendar.getInstance();
-		if (Month!=Today.get(Calendar.MONTH)){
-			Month=Today.get(Calendar.MONTH);
-			Play_Counter=0;
-		}
-		
+		//Calendar Today = Calendar.getInstance();
+		//if (Month!=Today.get(Calendar.MONTH)){
+		//	Month=Today.get(Calendar.MONTH);
+		//	Play_Counter=0;
+		//}
 	}
-	
+
 
 	private String name;
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 

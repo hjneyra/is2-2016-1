@@ -8,6 +8,7 @@ import {HelloComponent} from './components/hello.component';
 import {UsuarioComponent} from './components/usuario.component';
 import {HomeComponent} from './home/home.component';
 import {AdminComponent} from './components/admin.component';
+import {Alert} from 'ng2-bootstrap/ng2-bootstrap';
 @Component({
     selector: 'music-online',
     template: '<router-outlet></router-outlet>',

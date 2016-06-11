@@ -13,7 +13,7 @@ import ucsp.is2.model.Usuario;
 import ucsp.is2.repository.UsuarioRepository;
 import ucsp.is2.service.LoginService;
 
-class Log {
+class Log_Login {
 	public String email;
 	public String password;
 };
@@ -27,12 +27,12 @@ public class LoginController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	@ResponseBody
-	public HttpEntity<Usuario> login(@RequestBody Log log) {
+	public HttpEntity<Usuario> login(@RequestBody Log_Login log) {
 		Usuario usuario = loginService.login(log.email, log.password);
 		if(usuario==null){
 			return (HttpEntity<Usuario>) HttpEntity.EMPTY;
 		}
-//		System.out.println("Usuario: " + (usuario == null ? null : usuario.getEmail()));
+
 		return new HttpEntity<Usuario>(usuario);
 	}
 }

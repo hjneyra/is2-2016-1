@@ -9,15 +9,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import ucsp.is2.model.Usuario;
 import ucsp.is2.repository.UsuarioRepository;
+
+
+class Log_Usuario {
+	public String name;
+	public String last_name;
+	public String email;
+	public String password;
+};
 
 @RestController
 public class UsuarioController {
 
 	@Autowired
 	UsuarioRepository repository;
+
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public void save(@RequestBody Log_Usuario log) {
+		Usuario usuario = repository.findByEmail(log.email);
+		if(usuario == null){
+				usuario = new Usuario(log.name,log.last_name,log.email,log.password);
+				repository.save(usuario);
+		}
+	}
 
 	@RequestMapping(value = "usuarios", method = RequestMethod.GET)
 	public List<Usuario> listAll() {
@@ -32,4 +50,5 @@ public class UsuarioController {
 		}
 		return new HttpEntity<Usuario>(usuario);
 	}
+
 }

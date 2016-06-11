@@ -18,13 +18,23 @@ public class Usuario {
     private Long id;
     private String name;
     private String last_name;
-    private String password;
     private String email;
-    
+    private String password;
+
     @ManyToMany
     @JoinTable(name="usuario_usuario")
     private Collection<Usuario> usuarios;
-    
+
+    public Usuario (String name, String last_name,String email,String password){
+        this.name = name;
+        this.last_name = last_name;
+        this.email = email;
+        this.password = password;
+    }
+
+    public Usuario(){
+    }
+
     public Long getId() {
         return id;
     }

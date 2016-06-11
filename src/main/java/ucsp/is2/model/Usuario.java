@@ -1,6 +1,9 @@
 package ucsp.is2.model;
 
+import java.util.Collection;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.JoinTable;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,6 +19,21 @@ public class Usuario {
     private String name;
     private String last_name;
     private String email;
+    private String password;
+
+    @ManyToMany
+    @JoinTable(name="usuario_usuario")
+    private Collection<Usuario> usuarios;
+
+    public Usuario (String name, String last_name,String email,String password){
+        this.name = name;
+        this.last_name = last_name;
+        this.email = email;
+        this.password = password;
+    }
+
+    public Usuario(){
+    }
 
     public Long getId() {
         return id;
@@ -45,5 +63,12 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

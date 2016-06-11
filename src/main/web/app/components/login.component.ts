@@ -25,8 +25,13 @@ export class LoginComponent {
     constructor( 
         @Inject(LoginService) private loginService: LoginService,
         private router: Router) { }
-
+    /*
+    el data:Object{} se usa para poder captura los datos del formulario de login.Component.html 
+    */
     data:Object = {};
+    /*
+    fromSubmit se refiere a lo que se va ejecutar al hacer click en el boton definido en login.Component.html
+    */
     fromSubmit() {
         console.log(this.data);
         this.loginService.login(this.data.email, this.data.password).subscribe((result) => {

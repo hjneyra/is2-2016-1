@@ -6,7 +6,9 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {LoginComponent} from './components/login.component';
 import {HelloComponent} from './components/hello.component';
 import {UsuarioComponent} from './components/usuario.component';
+import {RegisterComponent} from './components/register.component';
 import {HomeComponent} from './home/home.component';
+import {Alert} from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
     selector: 'music-online',
@@ -18,6 +20,7 @@ import {HomeComponent} from './home/home.component';
     {path: '/hello', name: 'HelloPage', component: HelloComponent},
     {path: '/usuario', name: 'Usuario', component: UsuarioComponent},
     {path: '/login', name: 'Login', component: LoginComponent},
+    {path: '/register', name: 'Register', component: RegisterComponent},
     {path: '/**', redirectTo: ['HomePage']}
 ])
 export class AppComponent {

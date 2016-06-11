@@ -15,7 +15,7 @@ import ucsp.is2.model.Usuario;
 import ucsp.is2.repository.UsuarioRepository;
 
 
-class Log {
+class Log_Usuario {
 	public String name;
 	public String last_name;
 	public String email;
@@ -27,9 +27,9 @@ public class UsuarioController {
 
 	@Autowired
 	UsuarioRepository repository;
-	
+
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public void save(@RequestBody Log log) {
+	public void save(@RequestBody Log_Usuario log) {
 		Usuario usuario = repository.findByEmail(log.email);
 		if(usuario == null){
 				usuario = new Usuario(log.name,log.last_name,log.email,log.password);

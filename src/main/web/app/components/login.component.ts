@@ -22,11 +22,11 @@ import {LoginService} from '../service/login.service';
 export class LoginComponent {
     private email: string;
     private password: string;
-    constructor( 
+    constructor(
         @Inject(LoginService) private loginService: LoginService,
         private router: Router) { }
     /*
-    el data:Object{} se usa para poder captura los datos del formulario de login.Component.html 
+    el data:Object{} se usa para poder captura los datos del formulario de login.Component.html
     */
     data:Object = {};
     /*

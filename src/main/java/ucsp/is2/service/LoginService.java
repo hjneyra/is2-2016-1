@@ -2,7 +2,7 @@ package ucsp.is2.service;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Date; 
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,7 @@ public class LoginService {
 		if (usuario == null){
 			return null;
 		}
-		System.out.println(usuario.getEmail());	
+		System.out.println(usuario.getEmail());
 		return usuario;
 	}
 

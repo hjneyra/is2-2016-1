@@ -22,21 +22,11 @@ export class LoginService {
 		return this.http.post('/login', '{"email": "' + email + '", "password": "' + password + '"}', options)
 				.map((res: Response) => res.json())
 				.map((res) => {
-					// if (res.success) 
-					// {
-					// 	console.log("hallo");
-					// 	localStorage.setItem('auth_token', res.auth_token);
-					// 	this.loggedIn = true;
-					// }
 					localStorage.setItem('auth_token', res.auth_token);
 					this.loggedIn = true;
 					return res.success;
-				});	
+				});
     }
-	// logout() {
-	// 	localStorage.removeItem('auth_token');
-	// 	this.loggedIn = false;
-	// }
 
 	isLoggedIn() {
 		return this.loggedIn;

@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.5.4 
+Created-By: 1.4.2_05-b04 (Sun Microsystems Inc.)
+Main-Class: JSpeexEnc
+
+Name: build
+Build-Date: 27/05/2005 17:03
+Built-By: mgimpel
+Built-With: Linux 2.4.20-42.9.legacysmp i386
+
+Name: library
+Library-Name: JSpeex
+Library-Version: 0.9.7
+URL: http://jspeex.sourceforge.net/
+

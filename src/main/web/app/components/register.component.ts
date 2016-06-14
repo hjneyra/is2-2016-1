@@ -14,13 +14,14 @@ import {RegisterService} from '../service/register.service';
 })
 export class RegisterComponent {
 	
-    constructor(@Inject(RegisterService) private registerService: RegisterService) {}
+    constructor( @Inject(RegisterService) private registerService: RegisterService,
+        private router: Router) { }
  	data:Object = {};
 
     fromSubmit(){
-        this.registerService.register(this.data.name,this.data.last_name,this.data.email,this.data.password).subscribe(
-          data => { },
-            () => { })
-    };
-    
+        this.registerService.register(this.data.name,this.data.last_name,this.data.email,
+            this.data.password).subscribe((result) => {
+                this.router.navigate(['HomePage']);
+            });
+    }
 }

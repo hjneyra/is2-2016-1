@@ -9,5 +9,5 @@ public interface UsuarioRepository extends Repository<Usuario, Long> {
 	public Usuario findByEmailAndPassword(String email, String password);
 	public List<Usuario> findAll();
 	public Usuario findByEmail(String email);
-	public void save(Usuario usuario);
+	public Usuario save(Usuario usuario);
 }

@@ -1,15 +1,43 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<title>Music Online</title>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<script src="node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
+
+		<title>Music Online</title>
+
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/css/dassboard.css">
 		<!-- style -->
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
 	</head>
-	<body>
+	<body cz-shortcut-listen="true">
 		<!-- display app -->
-		<music-online>Loading...</music-online>
+		<div class="container-fluid">
+			<dir class="row">
+				<!-- left menu -->
+				<div class="col-sm-3 col-md-2 sidebar">
+				  <div class="logo-spotify">
+				  	<img src="https://glue-static.s3-external-3.amazonaws.com/images/logo-vertical-dark-background-54.png">
+				  	<h1>Spotify</h1>
+				  </div>
+		          <ul class="nav nav-sidebar">
+		          	<li><a href="#">Buscar</a></li>
+		            <li class="active"><a href="/#/">Inicio<span class="sr-only">(current)</span></a></li>
+		            <li><a href="/#/usuario/">Usuarios</a></li>
+		            <li><a href="#">Playlist</a></li>
+		            <li><a href="#">Siguiendo</a></li>
+		            <li><a href="/#/registro/">Registro</a></li>
+		            <li><a href="/#/login/">Login</a></li>
+		          </ul>
+		        </div>
+				<!-- right container -->
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+					<music-online>Loading...</music-online>
+                </div>
+			</dir>
+		</div>
 
 		<!-- libs -->
 		<script src="/js/lib/system-polyfills.js"></script>
@@ -19,21 +47,22 @@
 		<script src="/js/lib/angular2.dev.js"></script>
 		<script src="/js/lib/router.dev.js"></script>
 		<script src="/js/lib/http.dev.js"></script>
+		<script src="node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
 		<!-- systemjs -->
 		<script>
-		      System.config({
-		        packages: {
-		          'app': {
-		            format: 'register',
-		            defaultExtension: 'js'
-		          }
-		        },
+	      System.config({
+	        packages: {
+	          'app': {
+	            format: 'register',
+	            defaultExtension: 'js'
+	          }
+	        },
 			map: {
 			  moment: 'node_modules/moment/moment.js'
 			}
-		      });
-		      System.import('app/main')
-		      	.then(null, console.error.bind(console));
+	      });
+	      System.import('app/main')
+	      	.then(null, console.error.bind(console));
 		</script>
 	</body>
 </html>

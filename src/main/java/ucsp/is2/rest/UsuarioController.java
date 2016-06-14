@@ -32,9 +32,9 @@ public class UsuarioController {
 	public Usuario save(@RequestBody Log_Usuario log) {
 		Usuario usuario = repository.findByEmail(log.email);
 		if(usuario == null){
-				usuario = new Usuario(log.name,log.last_name,log.email,log.password);
-				repository.save(usuario);
-				return usuario;
+			usuario = new Usuario(log.name,log.last_name,log.email,log.password);
+			repository.save(usuario);
+			return usuario;
 		}
 		return null;
 	}

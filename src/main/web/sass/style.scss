@@ -1,5 +1,8 @@
-html {
-	margin: 0 auto;
+body {
+    color: #88898c;
+    background-color: #121314;
+    font-family: 'proxima_nova','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 14px;
 }
 
 .nav-button {
@@ -19,4 +22,11 @@ html {
 .nav-button:hover {
 	background-color: #fe3e92;
 	border: 2px solid #3efeaa;
+}
+
+.logo-spotify {
+    padding-bottom: 25px;
+    h1 {
+        color: #fff;
+    }
 }

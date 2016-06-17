@@ -39,12 +39,19 @@ public class ArtistaController {
 		}
 		return null;
 	}
-
+	
+	/*
+	 * function listar usuarios llamada desde usuario en el frontEnd
+	 * @author LuisAndia 
+	 * */
 	@RequestMapping(value = "artistas", method = RequestMethod.GET)
 	public List<Artista> listAll() {
 		return repository.findAll();
 	}
-
+	/*
+	 * lista un usuario especifico ejm: usuario?id=1
+	 * @author LuisAndia 
+	 * */
 	@RequestMapping(value = "artista/{id}")
 	public HttpEntity<Artista> listAll(@PathVariable Long id) {
 		Artista Artista = repository.findById(id);

@@ -20,6 +20,15 @@ public class Artista {
 	private String ciudad;
 	private String pais;
 
+	public Artista(String name, String genero, String descripcion,
+			String ciudad, String pais) {
+		this.name = name;
+		this.genero = genero;
+		this.descripcion = descripcion;
+		this.ciudad = ciudad;
+		this.pais = pais;
+	}
+	public Artista(){}
 	public Long getId() {
 		return id;
 	}

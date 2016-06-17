@@ -5,7 +5,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {HelloComponent} from './hello/hello.component';
 import {HomeComponent} from './home/home.component';
-
+import {ArtistaComponent} from './artista/artista.component';
 @Component({
     selector: 'music-online',
     template: '<router-outlet></router-outlet>',
@@ -13,6 +13,7 @@ import {HomeComponent} from './home/home.component';
 })
 @RouteConfig([
         {path: '/home', name: 'HomePage', component: HomeComponent},
+        {path: '/artista', name: 'ArtistaPage', component: ArtistaComponent},
         {path: '/hello', name: 'HelloPage', component: HelloComponent},
         {path: '/**', redirectTo: ['HomePage']}
 ])

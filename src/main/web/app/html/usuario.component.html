@@ -6,3 +6,6 @@
     <a [routerLink]="['HomePage']" class="nav-button">Home Page</a>
 </div>
 <p *ngFor="#usuario of usuarios">{{usuario.email}}</p>
+<form (ngSubmit)="fromSubmit()">
+    <button type="submit" class="btn-default btn">DardeBaja</button>
+</form>

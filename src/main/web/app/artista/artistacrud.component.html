@@ -1,0 +1,35 @@
+<h3>NUevo Artista</h3>
+<div>
+	<form (ngSubmit)="saveArtistaSubmit()">
+
+		<div class="form-group">
+			<label for="nombre">Nombre</label> <input type="text" id="nombre"
+				class="form-control" [(ngModel)]="data.name">
+		</div>
+
+		<div class="form-group">
+			<label for="genero">Genero</label> <input type="text" id="genero"
+				class="form-control" [(ngModel)]="data.genero">
+		</div>
+
+		<div class="form-group">
+			<label for="descripcion">Descripcion</label> 
+			<input type="text"
+				id="descripcion" class="form-control" [(ngModel)]="data.descripcion">
+		</div>
+
+		<div class="form-group">
+			<label for="pais">Pais</label> 
+			<input type="text" id="pais"
+				class="form-control" [(ngModel)]="data.pais">
+		</div>
+
+		<div class="form-group">
+			<label for="ciudad">Ciudad</label> <input type="text" id="ciudad"
+				class="form-control" [(ngModel)]="data.ciudad">
+		</div>
+
+		<button type="submit" class="btn-default btn">Enviar</button>
+	</form>
+</div>
+

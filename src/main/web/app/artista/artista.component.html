@@ -1,28 +1,39 @@
 <!-- Author: LuisAndia  -->
-<div>
-	<h2>nav</h2>
-	<a [routerLink]="['HomePage']" class="nav-button">Home Page</a>
-</div>
-<table>
-<thead>
-<tr>
-     <th>ID</th>   
-     <th>Nombre</th>
-     <th>Genero</th>
-     <th>Descripcion</th>
-     <th>Pais</th>
-     <th>Ciudad</th>
-  </tr>
-</thead>
-<tbody border="1">
-	<tr *ngFor="#artista of artistas">
-		<td>{{artista.id}}</td>
-		<td>{{artista.name}}</td>
-		<td>{{artista.genero}}</td>
-		<td>{{artista.descripcion}}</td>
-		<td>{{artista.pais}}</td>
-		<td>{{artista.ciudad}}</td>
-	</tr>
-</tbody>
-</table>
+
+
+<section>
+
+	<h2>Artistas</h2>
+	<i class="glyphicon glyphicon-plus"></i><a [routerLink]="['ArtistaCreatePage']">Crear Artista</a>
+	<table class="display table" id="myTable" datatable="">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Nombre</th>
+			<th>Genero</th>
+			<th>Descripcion</th>
+			<th>Pais</th>
+			<th>Ciudad</th>
+			<th>Editar</th>
+			<th>Eliminar</th>
+		</tr>
+	</thead>
+		<tbody>
+		<tr *ngFor="#artista of artistas">
+			<td>{{artista.id}}</td>
+			<td>{{artista.name}}</td>
+			<td>{{artista.genero}}</td>
+			<td>{{artista.descripcion}}</td>
+			<td>{{artista.pais}}</td>
+			<td>{{artista.ciudad}}</td>
+			<td><a href="http://localhost:8080/edit_artista/{{artista.id}}"><i class="glyphicon glyphicon-edit" style="color:black"></i></a></td>
+			<td><button (click)=del_artista(artista.id)>Eliminar</button></td>
+		</tr>
+		</tbody>
+	</table>
+</section>
+
+<script>
+angular.module('showcase', ['datatables']);
+</script>
 

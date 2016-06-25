@@ -34,4 +34,33 @@ seran mostradas en artista.component.html
                      this.message = data[0].name, this.artistas = data}
         );
     }
+    
+    del_artista(id:string) {
+
+        console.log(id);
+        this.artistaService.del_artista(id).subscribe(
+        (result) => {
+        console.log(result);
+           // this.router.navigate(['ArtistaPage']);
+
+		var index = -1;		
+		//var comArr = eval(this.artistas);
+		for( var i = 0; i < this.artistas.length; i++ ) {
+			if( this.artistas[i].id === id ) {
+				index = i;
+				break;
+			}
+		}
+		if( index === -1 ) {
+			alert( "Something gone wrong" );
+		}
+this.artistas.splice(i,1);
+        });
+
+    }
+    upd_artista(id:string)
+    {
+    
+    }
+    
 }

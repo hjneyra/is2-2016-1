@@ -26,8 +26,8 @@
 			<td>{{artista.descripcion}}</td>
 			<td>{{artista.pais}}</td>
 			<td>{{artista.ciudad}}</td>
-			<td><a href="http://localhost:8080/edit_artista/{{artista.id}}"><i class="glyphicon glyphicon-edit" style="color:black"></i></a></td>
-			<td><button (click)=del_artista(artista.id)>Eliminar</button></td>
+			<td><a href="/edit_artista?id={{artista.id}}"><i class="glyphicon glyphicon-edit" style="color:black"></i></a></td>
+			<td><button (click)="del_artista(artista.id)">Eliminar</button></td>
 		</tr>
 		</tbody>
 	</table>

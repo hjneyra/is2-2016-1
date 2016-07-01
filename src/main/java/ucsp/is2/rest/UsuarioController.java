@@ -29,14 +29,14 @@ public class UsuarioController {
 	UsuarioRepository repository;
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public Usuario save(@RequestBody Log_Usuario log) {
-		Usuario usuario = repository.findByEmail(log.email);
-		if(usuario == null){
-			usuario = new Usuario(log.name,log.last_name,log.email,log.password);
-			repository.save(usuario);
-			return usuario;
+	public Usuario save(@RequestBody Usuario log) {
+		Usuario usuario = repository.findByEmail(log.getEmail());
+		if(usuario != null){
+			/*usuario = new Usuario(log.name,log.last_name,log.email,log.password);
+			repository.save(usuario);*/
+			return null;
 		}
-		return null;
+		return repository.save(log);
 	}
 
 	@RequestMapping(value = "usuarios", method = RequestMethod.GET)

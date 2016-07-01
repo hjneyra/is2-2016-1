@@ -24,7 +24,6 @@ public class TestController {
 		Map message = new HashMap<>();
 
 		String result = testService.test();
-
 		message.put("message", result);
 		response.put("test", message);
 		return response;

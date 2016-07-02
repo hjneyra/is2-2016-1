@@ -18,6 +18,7 @@ public class Song {
 	private String album;
 	private String url;
 	private int score;
+	private int nscore;
 
 	public Long getId() {
 		return id;
@@ -65,5 +66,13 @@ public class Song {
 
 	public void setScore(int score) {
 		this.score = score;
+	}
+
+	public int getNscore() {
+		return nscore;
+	}
+
+	public void setNscore(int nscore) {
+		this.nscore = nscore;
 	}
 }

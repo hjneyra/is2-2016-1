@@ -21,6 +21,7 @@ public class Usuario {
     private String last_name;
     private String email;
     private String password;
+    private Boolean status;
 
     @ManyToMany
     @JoinTable(name="usuario_usuario")
@@ -34,6 +35,7 @@ public class Usuario {
         this.last_name = last_name;
         this.email = email;
         this.password = password;
+        this.status = true;
     }
     public Usuario(){
     }
@@ -74,5 +76,12 @@ public class Usuario {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 }

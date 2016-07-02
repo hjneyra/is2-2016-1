@@ -51,4 +51,8 @@ public class SongController {
 		return song;
 	}
 
+	@RequestMapping(value = "/songregister", method = RequestMethod.POST)
+	public Song save(@RequestBody Song log) {
+		return repository.save(log);
+	}
 }

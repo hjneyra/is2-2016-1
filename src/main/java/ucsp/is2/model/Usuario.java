@@ -14,7 +14,7 @@ import ucsp.is2.model.Song;
 public class Usuario {
 
     @Id
-    @SequenceGenerator(name="USUARIO_ID_GENERATOR", sequenceName="USUARIO_ID_SEQ")
+    @SequenceGenerator(name="USUARIO_ID_GENERATOR", sequenceName="USUARIO_ID_SEQ",allocationSize = 1, initialValue = 1000)
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="USUARIO_ID_GENERATOR")
     private Long id;
     private String name;

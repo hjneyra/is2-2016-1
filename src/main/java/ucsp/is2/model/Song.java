@@ -10,7 +10,7 @@ import javax.persistence.SequenceGenerator;
 public class Song {
 
 	@Id
-	@SequenceGenerator(name="SONG_ID_GENERATOR", sequenceName="SONG_ID_SEQ")
+	@SequenceGenerator(name="SONG_ID_GENERATOR", sequenceName="SONG_ID_SEQ",allocationSize = 1, initialValue = 1000)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SONG_ID_GENERATOR")
 	private Long id;
 	private String name;

@@ -24,7 +24,7 @@ export class LoginService {
 				.map((res) => {
 					localStorage.setItem('auth_token', res.auth_token);
 					this.loggedIn = true;
-					return res.success;
+					return res;//.success;
 				});
     }
 

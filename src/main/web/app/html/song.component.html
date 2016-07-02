@@ -1,0 +1,10 @@
+<div><h3>JSON</h3><div>{{jsonResponse}}</div></div>
+<div><h3>USUARIOS</h3></div>
+<div><h3>message</h3><div>{{message}}</div></div>
+<form (ngSubmit)="fromSubmit()">
+	<div class="form-group">
+      <label for="score">Score</label>
+      <input type="text" id="score" class="form-control"[(ngModel)]="data.score">
+    </div>
+    <button type="submit" class="btn-default btn"> Score</button>
+</form>

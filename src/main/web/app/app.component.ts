@@ -3,6 +3,7 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
+import {SongComponent} from './components/song.component';
 import {LoginComponent} from './components/login.component';
 import {HelloComponent} from './components/hello.component';
 import {UsuarioComponent} from './components/usuario.component';
@@ -21,6 +22,7 @@ import {Alert} from 'ng2-bootstrap/ng2-bootstrap';
     {path: '/hello', name: 'HelloPage', component: HelloComponent},
     {path: '/usuario', name: 'Usuario', component: UsuarioComponent},
     {path: '/login', name: 'Login', component: LoginComponent},
+    {path: '/songs', name: 'Song', component: SongComponent},
     {path: '/registro', name: 'Register', component: RegisterComponent},
     {path: '/**', redirectTo: ['HomePage']}
 ])

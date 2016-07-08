@@ -80,4 +80,18 @@ public class ArtistaController {
 		return new HttpEntity<Artista>(Artista);
 	}
 
+	/*
+	 * editar un artista especifico ejm: artista?id=1
+	 * @author LuisAndia 
+	 * */
+	@RequestMapping(value = "edit_artista/{id}")
+	public HttpEntity<Artista> edit_artista(@PathVariable Long id) {
+		Artista Artista = repository.findById(id);
+		if (Artista == null) {
+			return (HttpEntity<Artista>) HttpEntity.EMPTY;
+		}
+		return new HttpEntity<Artista>(Artista);
+	}
+	
+	
 }

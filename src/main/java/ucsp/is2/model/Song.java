@@ -10,7 +10,7 @@ import javax.persistence.SequenceGenerator;
 public class Song {
 
 	@Id
-	@SequenceGenerator(name="SONG_ID_GENERATOR", sequenceName="SONG_ID_SEQ")
+	@SequenceGenerator(name="SONG_ID_GENERATOR", sequenceName="SONG_ID_SEQ",allocationSize = 1, initialValue = 1000)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SONG_ID_GENERATOR")
 	private Long id;
 	private String name;
@@ -18,6 +18,7 @@ public class Song {
 	private String album;
 	private String url;
 	private int score;
+	private int nscore;
 
 	public Long getId() {
 		return id;
@@ -65,5 +66,13 @@ public class Song {
 
 	public void setScore(int score) {
 		this.score = score;
+	}
+
+	public int getNscore() {
+		return nscore;
+	}
+
+	public void setNscore(int nscore) {
+		this.nscore = nscore;
 	}
 }

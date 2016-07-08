@@ -1,26 +1,25 @@
-'use strict';
 
 import {Component, Inject} from 'angular2/core';
 import {Router, ROUTER_DIRECTIVES} from 'angular2/router';
 import {CORE_DIRECTIVES} from 'angular2/common';
 import {Response} from 'angular2/http';
 import {RouterLink} from 'angular2/router';
-import {RegisterService} from '../service/register.service';
+import {SongregisterService} from '../service/songregister.service';
 
 @Component({
-    templateUrl: 'app/html/register.component.html',
-    providers: [RegisterService],
+    templateUrl: 'app/html/songregister.component.html',
+    providers: [SongregisterService],
     directives: [CORE_DIRECTIVES, RouterLink]
 })
-export class RegisterComponent {
+export class SongregisterComponent {
 	
-    constructor( @Inject(RegisterService) private registerService: RegisterService,
+    constructor( @Inject(SongregisterService) private songregisterService: SongregisterService,
         private router: Router) { }
  	data:Object = {};
 
     fromSubmit(){
-        this.registerService.register(this.data.name,this.data.lastname,this.data.email,
-            this.data.password).subscribe((result) => {
+        this.songregisterService.register(this.data.name,this.data.author,this.data.album,
+            this.data.url).subscribe((result) => {
                 this.router.navigate(['HomePage']);
             });
     }

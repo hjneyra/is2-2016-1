@@ -21,7 +21,9 @@ class Log_Usuario {
 	public String email;
 	public String password;
 };
-
+class Log_Unsubscribe {
+	public String id;
+};
 @RestController
 public class UsuarioController {
 
@@ -29,14 +31,14 @@ public class UsuarioController {
 	UsuarioRepository repository;
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public Usuario save(@RequestBody Log_Usuario log) {
-		Usuario usuario = repository.findByEmail(log.email);
-		if(usuario == null){
-			usuario = new Usuario(log.name,log.last_name,log.email,log.password);
-			repository.save(usuario);
-			return usuario;
+	public Usuario save(@RequestBody Usuario log) {
+		Usuario usuario = repository.findByEmail(log.getEmail());
+		if(usuario != null){
+			/*usuario = new Usuario(log.name,log.last_name,log.email,log.password);
+			repository.save(usuario);*/
+			return null;
 		}
-		return null;
+		return repository.save(log);
 	}
 
 	@RequestMapping(value = "usuarios", method = RequestMethod.GET)
@@ -51,6 +53,17 @@ public class UsuarioController {
 			return (HttpEntity<Usuario>) HttpEntity.EMPTY;
 		}
 		return new HttpEntity<Usuario>(usuario);
+	}
+	@RequestMapping(value = "/unsubscribe", method = RequestMethod.POST)
+	public Usuario unsub(@RequestBody Log_Unsubscribe log) {
+		Long id = Long.parseLong(log.id);
+		Usuario usuario = repository.findById(id);
+		if(usuario == null){
+			return null;
+		}
+		usuario.setStatus(false);
+		repository.save(usuario);
+		return usuario;
 	}
 
 }

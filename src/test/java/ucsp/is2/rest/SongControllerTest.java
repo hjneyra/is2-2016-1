@@ -31,11 +31,31 @@ public class SongControllerTest {
 	@Test
 	public void testSaveSong() {
 		Song song = new Song();
-		song.setName("My Song");
+		song.setName("Bring me to Life");
+		song.setAuthor("evanescence");
+		song.setAlbum("Fallen");
 		songController.save(song);
+
 		Assert.assertNotNull(song.getId());
 	}
-
+	
+	
+	@Test
+	public void Testscore() {
+		
+		Log_Score sc= new Log_Score();
+		
+		sc.id="1";
+		sc.score="5";
+		Song res= songController.score(sc);
+		Assert.assertTrue("Esta mal el primer test de testscore",res==null);
+		
+		sc.id="55";
+		sc.score="5";
+		res= songController.score(sc);
+		Assert.assertTrue("la segunda prueba deberia retornar un no nulo",res!=null);
+		
+	}
 
 
 }

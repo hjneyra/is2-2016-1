@@ -34,8 +34,6 @@ public class LoginServiceTest {
  * */
 @Test
 public void testLogin() {
-
-	
 	Usuario user = new Usuario();
 	Random ram= new Random();
 	user.setPassword("123");
